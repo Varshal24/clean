@@ -6,7 +6,8 @@ var config = {
     },
     map: {
         '*': {
-            mapbox: 'Wexo_Shipping/js/model/map-providers/mapbox'
+            mapbox: 'Wexo_Shipping/js/model/map-providers/mapbox',
+            'Aheadworks_OneStepCheckout/js/view/shipping-method': 'Wexo_Shipping/js/view/shipping-method'
         }
     },
     paths: {
