@@ -10,9 +10,6 @@
                             <item name="children" xsi:type="array">
                                 <item name="checkoutConfig" xsi:type="array">
                                     <item name="children" xsi:type="array">
-                                        <item name="shippingMethod" xsi:type="array">
-                                            <item name="component" xsi:type="string">Wexo_Shipping/js/view/shipping-method</item>
-                                        </item>
                                         <item name="additional-payment-validators" xsi:type="array">
                                             <item name="component" xsi:type="string">uiComponent</item>
                                             <item name="children" xsi:type="array">
