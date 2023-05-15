@@ -1,0 +1,76 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method Aheadworks\\\\OneStepCheckout\\\\CustomerData\\\\GiftWrappingInfo\\:\\:getConfigProvider\\(\\) has invalid return type Magento\\\\GiftWrapping\\\\Model\\\\ConfigProvider\\.$#"
+			count: 1
+			path: CustomerData/GiftWrappingInfo.php
+
+		-
+			message: "#^Caught class MaxMind\\\\Db\\\\Reader\\\\InvalidDatabaseException not found\\.$#"
+			count: 1
+			path: Model/Address/Form/GeoIp/Adapter/GeoIp2.php
+
+		-
+			message: "#^Instantiated class GeoIp2\\\\Database\\\\Reader not found\\.$#"
+			count: 1
+			path: Model/Address/Form/GeoIp/Adapter/GeoIp2.php
+
+		-
+			message: "#^Class Magento\\\\Braintree\\\\Model\\\\Ui\\\\PayPal\\\\ConfigProvider not found\\.$#"
+			count: 1
+			path: Model/ConfigProvider/PayPalConfigProviderFactory.php
+
+		-
+			message: "#^Class MSP\\\\ReCaptcha\\\\Block\\\\LayoutProcessor\\\\Checkout\\\\Onepage not found\\.$#"
+			count: 1
+			path: Model/Layout/Processor/Captcha/MspReCaptcha.php
+
+		-
+			message: "#^Class MSP\\\\ReCaptcha\\\\Model\\\\LayoutSettings not found\\.$#"
+			count: 1
+			path: Model/ThirdPartyModule/Braintree/ReCaptcha/Processors/Magento.php
+
+		-
+			message: "#^Class Magento\\\\CustomerBalance\\\\Model\\\\Plugin\\\\TotalsCollector not found\\.$#"
+			count: 1
+			path: Model/ThirdPartyModule/CustomerBalance/Plugin/TotalsCollectorFactory.php
+
+		-
+			message: "#^Class Magento\\\\GiftCardAccount\\\\Model\\\\Plugin\\\\TotalsCollector not found\\.$#"
+			count: 1
+			path: Model/ThirdPartyModule/GiftCardAccount/Plugin/TotalsCollectorFactory.php
+
+		-
+			message: "#^Class Klarna\\\\Kp\\\\Model\\\\Session not found\\.$#"
+			count: 1
+			path: Model/ThirdPartyModule/Klarna/Kp/SessionFactory.php
+
+		-
+			message: "#^Class Magento\\\\GiftWrapping\\\\Model\\\\ConfigProvider not found\\.$#"
+			count: 1
+			path: Model/ThirdPartyModule/Magento/GiftWrapping/ConfigProviderFactory.php
+
+		-
+			message: "#^Method Aheadworks\\\\OneStepCheckout\\\\Model\\\\ThirdPartyModule\\\\Magento\\\\GiftWrapping\\\\ConfigProviderFactory\\:\\:create\\(\\) has invalid return type Magento\\\\GiftWrapping\\\\Model\\\\ConfigProvider\\.$#"
+			count: 1
+			path: Model/ThirdPartyModule/Magento/GiftWrapping/ConfigProviderFactory.php
+
+		-
+			message: "#^Class Magento\\\\PaypalReCaptcha\\\\Block\\\\LayoutProcessor\\\\Checkout\\\\Onepage not found\\.$#"
+			count: 1
+			path: Model/ThirdPartyModule/Paypal/ReCaptcha/Block/LayoutProcessor/Checkout/OnepageFactory.php
+
+		-
+			message: "#^Class Magento\\\\Reward\\\\Model\\\\Plugin\\\\TotalsCollector not found\\.$#"
+			count: 1
+			path: Model/ThirdPartyModule/Reward/Plugin/TotalsCollectorFactory.php
+
+		-
+			message: "#^Class Amazon\\\\Core\\\\Helper\\\\Data not found\\.$#"
+			count: 1
+			path: Model/ThirdPartyModule/Status/Amazon/DefaultProcessor.php
+
+		-
+			message: "#^Access to constant METHOD_CODE on an unknown class Klarna\\\\Kp\\\\Model\\\\Payment\\\\Kp\\.$#"
+			count: 1
+			path: Plugin/Checkout/Block/OnepagePlugin.php

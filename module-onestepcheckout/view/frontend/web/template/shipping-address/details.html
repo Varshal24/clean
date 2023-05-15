@@ -1,0 +1,12 @@
+<div class="billing-address-details" data-bind="if: shippingAddressForDetails()">
+    <!-- ko text: shippingAddressForDetails().prefix -->
+    <!-- /ko --> <!-- ko text: shippingAddressForDetails().firstname --><!-- /ko -->
+    <!-- ko text: shippingAddressForDetails().lastname --><!-- /ko -->
+    <!-- ko text: shippingAddressForDetails().suffix --><!-- /ko --><!-- ko if: getStreetString(shippingAddressForDetails().street) -->,<!-- /ko -->
+    <!-- ko text: getStreetString(shippingAddressForDetails().street) --><!-- /ko --><!-- ko if: (shippingAddressForDetails().city) -->, <!-- /ko -->
+    <!-- ko text: shippingAddressForDetails().city --><!-- /ko --><!-- ko if: (shippingAddressForDetails().region) -->,<!-- /ko -->
+    <!-- ko text: shippingAddressForDetails().region --><!-- /ko --><!-- ko if: (shippingAddressForDetails().postcode) -->,<!-- /ko -->
+    <!-- ko text: shippingAddressForDetails().postcode --><!-- /ko --><!-- ko if: (getCountryName(shippingAddressForDetails().countryId).length) -->,<!-- /ko -->
+    <!-- ko text: getCountryName(shippingAddressForDetails().countryId) --><!-- /ko --><!-- ko if: (shippingAddressForDetails().telephone) -->,<!-- /ko -->
+    <!-- ko text: shippingAddressForDetails().telephone --><!-- /ko -->.
+</div>

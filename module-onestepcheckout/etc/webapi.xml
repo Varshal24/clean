@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/awOsc/guest-carts/:cartId/cart-items/:itemId" method="DELETE">
+        <service class="Aheadworks\OneStepCheckout\Api\GuestCartItemManagementInterface" method="remove"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/awOsc/carts/mine/cart-items/:itemId" method="DELETE">
+        <service class="Aheadworks\OneStepCheckout\Api\CartItemManagementInterface" method="remove"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/awOsc/guest-carts/:cartId/cart-items" method="POST">
+        <service class="Aheadworks\OneStepCheckout\Api\GuestCartItemManagementInterface" method="update"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/awOsc/carts/mine/cart-items" method="POST">
+        <service class="Aheadworks\OneStepCheckout\Api\CartItemManagementInterface" method="update"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/awOsc/guest-carts/:cartId/payment-methods" method="POST">
+        <service class="Aheadworks\OneStepCheckout\Api\GuestPaymentMethodsManagementInterface" method="getPaymentMethods"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/awOsc/carts/mine/payment-methods" method="POST">
+        <service class="Aheadworks\OneStepCheckout\Api\PaymentMethodsManagementInterface" method="getPaymentMethods"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/awOsc/guest-carts/:cartId/sections-details" method="POST">
+        <service class="Aheadworks\OneStepCheckout\Api\GuestCheckoutSectionsManagementInterface" method="getSectionsDetails"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/awOsc/carts/mine/sections-details" method="POST">
+        <service class="Aheadworks\OneStepCheckout\Api\CheckoutSectionsManagementInterface" method="getSectionsDetails"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/awOsc/negotiable-carts/:cartId/sections-details" method="POST">
+        <service class="Aheadworks\OneStepCheckout\Api\CheckoutSectionsManagementInterface" method="getSectionsDetails"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+    <route url="/V1/awOsc/carts/:cartId/completeness-log" method="POST">
+        <service class="Aheadworks\OneStepCheckout\Api\DataFieldCompletenessLoggerInterface" method="log"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/awOsc/customers/isSubscribedByEmail" method="POST">
+        <service class="Aheadworks\OneStepCheckout\Api\NewsletterSubscriberManagementInterface" method="isSubscribedByEmail"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/awOsc/address/mine" method="POST">
+        <service class="Aheadworks\OneStepCheckout\Api\CustomerAddressManagementInterface" method="updateAddress"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/awOsc/carts/mine/gift-message" method="POST">
+        <service class="Aheadworks\OneStepCheckout\Api\GiftMessageManagementInterface" method="update"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/awOsc/carts/mine/gift-message/:itemId" method="POST">
+        <service class="Aheadworks\OneStepCheckout\Api\GiftMessageItemManagementInterface" method="update"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+        <route url="/V1/awOsc/guest-carts/:cartId/gift-message" method="POST">
+            <service class="Aheadworks\OneStepCheckout\Api\GuestGiftMessageManagementInterface" method="update"/>
+            <resources>
+                <resource ref="anonymous" />
+            </resources>
+        </route>
+    <route url="/V1/awOsc/guest-carts/:cartId/gift-message/:itemId" method="POST">
+        <service class="Aheadworks\OneStepCheckout\Api\GuestGiftMessageItemManagementInterface" method="update"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>

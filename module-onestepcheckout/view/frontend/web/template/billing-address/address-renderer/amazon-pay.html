@@ -1,0 +1,18 @@
+<li class="shipping-address-item" data-bind="css: isSelected() ? 'selected-item' : 'not-selected-item'">
+    <div class="shipping-address-name">
+        <!-- ko text: address().prefix --><!-- /ko --> <!-- ko text: address().firstname --><!-- /ko -->
+        <!-- ko text: address().lastname --><!-- /ko --> <!-- ko text: address().suffix --><!-- /ko -->
+    </div>
+    <!-- ko text: address().street --><!-- /ko -->,
+    <!-- ko text: address().city --><!-- /ko --><!-- ko if: (address().region) -->, <!-- /ko --><!-- ko text: address().region --><!-- /ko -->,
+    <!-- ko text: address().postcode --><!-- /ko -->,
+    <!-- ko text: getCountryName(address().countryId) --><!-- /ko -->,
+    <!-- ko text: address().telephone --><!-- /ko -->.
+    <!-- ko if: (address().isEditable()) -->
+    <button type="button"
+            class="action edit-address-link"
+            data-bind="click: onEditAddressClick, visible: address().isEditable()">
+        <span data-bind="i18n: 'Edit Address'"></span>
+    </button>
+    <!-- /ko -->
+</li>

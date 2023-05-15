@@ -1,0 +1,28 @@
+<?php
+use Aheadworks\OneStepCheckout\Block\Adminhtml\System\Config\GeoIp\Install;
+use Magento\Framework\Escaper;
+use Aheadworks\OneStepCheckout\ViewModel\Serializer;
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @var Install $block
+ * @var Escaper $escaper
+ * @var Serializer $serializer
+ */
+$serializer = $block->getData('serializer');
+?>
+<div class="aw-osc_button-container">
+    <button class="action-default"
+            type="button"
+            <?php if ($block->isDisabled()): ?> disabled<?php endif; ?>
+            data-mage-init='{"awOscPackageInstaller": {
+                "submitUrl": <?= /* @noEscape */ $serializer->serializeToJson($block->getSubmitUrl()) ?>,
+                "packageName": <?= /* @noEscape */ $serializer->serializeToJson($block->getPackageName()) ?>,
+                "installedLabel": <?= /* @noEscape */ $serializer->serializeToJson($block->getButtonLabelInstalled()) ?>,
+                "isInstalled": <?= /* @noEscape */ $serializer->serializeToJson($block->isInstalled()) ?>,
+                "linkedControlsSelector": <?= /* @noEscape */  $serializer->serializeToJson(
+                    "#row_aw_osc_geo_ip_download_database [data-role=download-geo-ip-database]"
+                ) ?>
+            }}'><?php echo $block->escapeHtml($block->getButtonLabel()) ?></button>
+</div>
