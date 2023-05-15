@@ -9,6 +9,8 @@ define([
     'Aheadworks_OneStepCheckout/js/model/payment-option/coupon',
     'Aheadworks_OneStepCheckout/js/model/payment-option/message-processor',
     'Aheadworks_OneStepCheckout/js/model/payment-option/adapter/discount',
+    'Magento_Checkout/js/model/shipping-service',
+    'Aheadworks_OneStepCheckout/js/action/get-sections-details'
 ], function (
     $,
     ko,
@@ -19,7 +21,9 @@ define([
     applyByCodeFlag,
     coupon,
     messageProcessor,
-    discountAdapter
+    discountAdapter,
+    shippingService,
+    getSectionsDetailsAction
 ) {
     'use strict';
 
@@ -55,6 +59,10 @@ define([
             this.isCouponCodeApplied.subscribe(function (isApplied) {
                 if (!isApplied) {
                     this.codeToApply('');
+                    shippingService.isLoading(true);
+                    getSectionsDetailsAction(['shippingMethods']).always(function () {
+                        shippingService.isLoading(false);
+                    });
                 }
             }, this);
 
