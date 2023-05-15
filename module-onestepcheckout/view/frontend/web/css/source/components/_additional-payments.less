@@ -1,0 +1,98 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .onestepcheckout-index-index {
+    .opc-payment-additional.customerbalance,
+    .opc-payment-additional.rewardpoints {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 16px;
+      border: 1px solid #D8D8D8;
+      border-radius: 2px;
+
+      .payment-option-title,
+      .payment-option-content {
+        margin-bottom: 0;
+      }
+
+      .payment-option-title {
+        font-weight: 500;
+      }
+
+      .actions-toolbar {
+        .action {
+          font-family: @aw-osc-font-family__base;
+          font-weight: 500;
+          color: #333333;
+          margin-right: 0;
+          background-color: #EDEDED;
+          border-color: #D1D1D1;
+        }
+      }
+    }
+
+    .opc-payment-additional.customerbalance {
+      .actions-toolbar {
+        .action {
+          padding: 8px 16px;
+        }
+      }
+    }
+
+    .opc-payment-additional.rewardpoints {
+      .actions-toolbar {
+        .action {
+          padding: 8px;
+        }
+      }
+    }
+
+    .customerbalance + .rewardpoints {
+      margin-top: 8px;
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .onestepcheckout-index-index {
+    .opc-payment-additional.customerbalance,
+    .opc-payment-additional.rewardpoints {
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+  .onestepcheckout-index-index {
+    .opc-payment-additional.customerbalance,
+    .opc-payment-additional.rewardpoints {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .payment-option-inner {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .onestepcheckout-index-index {
+    .opc-payment-additional.customerbalance,
+    .opc-payment-additional.rewardpoints {
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

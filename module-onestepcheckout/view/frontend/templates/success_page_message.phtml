@@ -1,0 +1,12 @@
+<?php
+/** @var $block \Aheadworks\OneStepCheckout\Block\Order\SuccessPageMessage */
+
+foreach ($block->getMessagesSuccessCreateCustomer() as $messageSuccess) { ?>
+    <div role="alert" class="messages">
+        <div class="message-success success message">
+            <div><?php echo $block->escapeHtml($messageSuccess->getText()) ?></div>
+        </div>
+    </div>
+<?php
+}
+?>

@@ -1,0 +1,19 @@
+<?php
+/* @var $block \Aheadworks\OneStepCheckout\Block\Adminhtml\Order\Note */
+
+// @codingStandardsIgnoreFile
+?>
+<?php
+    $order = $block->getOrder();
+    $orderNote = $order->getAwOrderNote();
+?>
+<?php if ($orderNote): ?>
+    <section class="admin__page-section order-note">
+        <div class="admin__page-section-title">
+            <span class="title"><?php echo $block->escapeHtml(__('Order Note')) ?></span>
+        </div>
+        <div class="admin__page-section-content">
+            <p><?php echo nl2br($block->escapeHtml($orderNote)) ?></p>
+        </div>
+    </section>
+<?php endif; ?>

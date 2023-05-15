@@ -1,0 +1,73 @@
+<!-- ko if: isStepVisible -->
+<div class="onestep-billing-address">
+    <div class="field choice" data-bind="visible: isVisibleSameAsShippingFlag()">
+        <input class="input billing-address-same-as-shipping"
+               id="billing-address-same-as-shipping"
+               type="checkbox"
+               name="billing-address-same-as-shipping"
+               onkeydown="return event.key !== 'Enter';"
+               data-bind="checked: isAddressSameAsShipping, click: onUseShippingAddress"/>
+        <label for="billing-address-same-as-shipping" class="label">
+            <span data-bind="i18n: 'My billing and shipping address are the same'"></span>
+        </label>
+    </div>
+
+    <!-- ko if: isAddressDetailsVisible -->
+    <!-- ko template: 'Aheadworks_OneStepCheckout/billing-address/details' --><!-- /ko -->
+    <!--/ko-->
+
+    <!-- ko ifnot: isFormInline -->
+        <!-- ko if: isAddressListVisible -->
+            <div class="title"
+                 data-role="title"
+                 data-bind="visible: isAddNewAddressLinkVisible()">
+                <button class="aw-button-simple aw-button-simple__plus"
+                        data-bind="i18n: 'Add New Address', click: onAddNewAddressClick"></button>
+            </div>
+            <!-- ko foreach: getRegion('billing-address-list') -->
+                <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        <!--/ko-->
+        <!-- ko if: isAddressFormVisible -->
+            <!-- ko template: 'Aheadworks_OneStepCheckout/billing-address/form' --><!-- /ko -->
+            <div class="action-toolbar">
+                <!-- ko ifnot: isExistingAddressOpenToEdit -->
+                    <button class="action primary" data-bind="click: onSaveNewAddressClick">
+                        <span data-bind="i18n: 'Update'"></span>
+                    </button>
+                    <button class="action" data-bind="click: onCancelClick">
+                        <span data-bind="i18n: 'Cancel'"></span>
+                    </button>
+                <!-- /ko -->
+                <!-- ko if: isExistingAddressOpenToEdit -->
+                    <button class="action primary" data-bind="click: onUpdateAddressClick">
+                        <span data-bind="i18n: 'Update'"></span>
+                    </button>
+                    <button class="action" data-bind="click: onCancelClick">
+                        <span data-bind="i18n: 'Back'"></span>
+                    </button>
+                <!-- /ko -->
+            </div>
+        <!--/ko-->
+    <!--/ko-->
+
+    <!-- ko if: errorValidationMessage().length > 0 -->
+        <div class="message notice">
+            <span><!-- ko text: errorValidationMessage()--><!-- /ko --></span>
+        </div>
+    <!--/ko-->
+
+    <!-- ko if: isFormInline -->
+        <!-- ko if: isAddressFormVisible -->
+            <!-- ko template: 'Aheadworks_OneStepCheckout/billing-address/form' --><!-- /ko -->
+                <!-- ko if: isQuoteVirtual -->
+                    <div class="action-toolbar">
+                        <button class="action primary" data-bind="click: onSaveNewAddressClick">
+                            <span data-bind="i18n: 'Update'"></span>
+                        </button>
+                    </div>
+                <!--/ko-->
+        <!--/ko-->
+    <!--/ko-->
+</div>
+<!--/ko-->

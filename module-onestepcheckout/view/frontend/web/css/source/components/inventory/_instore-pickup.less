@@ -1,0 +1,42 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  #store-pickup {
+
+    margin-bottom: 24px;
+
+    #delivery-method-selector {
+      display: none;
+    }
+
+    #store-selector {
+
+      .step-title {
+        margin-bottom: 10px;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.1;
+      }
+
+      .form-continue {
+        .actions-toolbar > .primary {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  #store-selector-popup {
+    #store-selector-search-input {
+      position: static;
+    }
+  }
+}

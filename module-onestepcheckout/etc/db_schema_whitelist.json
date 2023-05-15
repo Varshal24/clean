@@ -1,0 +1,129 @@
+{
+    "aw_osc_report_abandoned_checkouts_index": {
+        "column": {
+            "index_id": true,
+            "period": true,
+            "store_id": true,
+            "customer_group_id": true,
+            "abandoned_checkouts_count": true,
+            "abandoned_checkouts_revenue": true,
+            "completed_checkouts_count": true,
+            "completed_checkouts_revenue": true,
+            "conversion": true,
+            "base_to_global_rate": true
+        },
+        "index": {
+            "AW_OSC_REPORT_ABANDONED_CHECKOUTS_INDEX_PERIOD": true,
+            "AW_OSC_REPORT_ABANDONED_CHECKOUTS_INDEX_STORE_ID": true,
+            "AW_OSC_REPORT_ABANDONED_CHECKOUTS_INDEX_CUSTOMER_GROUP_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "AW_OSC_REPORT_ABANDONED_CHECKOUTS_INDEX_STORE_ID_STORE_STORE_ID": true
+        }
+    },
+    "aw_osc_report_abandoned_checkouts_index_idx": {
+        "column": {
+            "index_id": true,
+            "period": true,
+            "store_id": true,
+            "customer_group_id": true,
+            "abandoned_checkouts_count": true,
+            "abandoned_checkouts_revenue": true,
+            "completed_checkouts_count": true,
+            "completed_checkouts_revenue": true,
+            "conversion": true,
+            "base_to_global_rate": true
+        },
+        "index": {
+            "AW_OSC_REPORT_ABANDONED_CHECKOUTS_INDEX_IDX_PERIOD": true,
+            "AW_OSC_REPORT_ABANDONED_CHECKOUTS_INDEX_IDX_STORE_ID": true,
+            "AW_OSC_REPORT_ABANDONED_CHECKOUTS_INDEX_IDX_CUSTOMER_GROUP_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "AW_OSC_REPORT_ABANDONED_CHKTS_IDX_IDX_STORE_ID_STORE_STORE_ID": true
+        }
+    },
+    "aw_osc_checkout_data_completeness": {
+        "column": {
+            "id": true,
+            "quote_id": true,
+            "field_name": true,
+            "is_completed": true,
+            "scope": true
+        },
+        "index": {
+            "AW_OSC_CHECKOUT_DATA_COMPLETENESS_QUOTE_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "AW_OSC_CHECKOUT_DATA_COMPLETENESS_QUOTE_ID_QUOTE_ENTITY_ID": true
+        }
+    },
+    "aw_osc_report_aggregation_by_day": {
+        "column": {
+            "period_from": true,
+            "period_to": true
+        },
+        "index": {
+            "AW_OSC_REPORT_AGGREGATION_BY_DAY_PERIOD_FROM": true,
+            "AW_OSC_REPORT_AGGREGATION_BY_DAY_PERIOD_TO": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "aw_osc_report_aggregation_by_week": {
+        "column": {
+            "period_from": true,
+            "period_to": true
+        },
+        "index": {
+            "AW_OSC_REPORT_AGGREGATION_BY_WEEK_PERIOD_FROM": true,
+            "AW_OSC_REPORT_AGGREGATION_BY_WEEK_PERIOD_TO": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "aw_osc_report_aggregation_by_month": {
+        "column": {
+            "period_from": true,
+            "period_to": true
+        },
+        "index": {
+            "AW_OSC_REPORT_AGGREGATION_BY_MONTH_PERIOD_FROM": true,
+            "AW_OSC_REPORT_AGGREGATION_BY_MONTH_PERIOD_TO": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "aw_osc_report_aggregation_by_quarter": {
+        "column": {
+            "period_from": true,
+            "period_to": true
+        },
+        "index": {
+            "AW_OSC_REPORT_AGGREGATION_BY_QUARTER_PERIOD_FROM": true,
+            "AW_OSC_REPORT_AGGREGATION_BY_QUARTER_PERIOD_TO": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "aw_osc_report_aggregation_by_year": {
+        "column": {
+            "period_from": true,
+            "period_to": true
+        },
+        "index": {
+            "AW_OSC_REPORT_AGGREGATION_BY_YEAR_PERIOD_FROM": true,
+            "AW_OSC_REPORT_AGGREGATION_BY_YEAR_PERIOD_TO": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

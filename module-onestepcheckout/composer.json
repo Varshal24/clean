@@ -1,0 +1,45 @@
+{
+    "name": "aheadworks/module-onestepcheckout",
+    "description": "One Step Checkout module by Aheadworks",
+    "require": {
+        "php": "~8.1.0||~8.2.0",
+        "magento/framework": "^103.0.4",
+        "magento/module-backend": "^102.0.4",
+        "magento/module-checkout": "^100.4.4",
+        "magento/module-checkout-agreements": "^100.4.3",
+        "magento/module-cms": "^104.0.4",
+        "magento/module-config": "^101.2.4",
+        "magento/module-configurable-product": "^100.4.4",
+        "magento/module-customer": "^103.0.4",
+        "magento/module-directory": "^100.4.4",
+        "magento/module-indexer": "^100.4.4",
+        "magento/module-newsletter": "^100.4.4",
+        "magento/module-quote": "^101.2.4",
+        "magento/module-payment": "^100.4.4",
+        "magento/module-paypal": "^101.0.4",
+        "magento/module-sales": "^103.0.4",
+        "magento/module-sales-rule": "^101.2.4",
+        "magento/module-shipping": "^100.4.4",
+        "magento/module-store": "^101.1.4",
+        "magento/module-tax": "^100.4.4",
+        "magento/module-ui": "^101.2.4",
+        "magento/module-swatches": "^100.4.4"
+    },
+    "suggests": {
+        "aheadworks/module-onestepcheckout-graph-ql": "1.0.0"
+    },
+    "homepage": "https://aheadworks.com/",
+    "type": "magento2-module",
+    "version": "2.5.1",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Aheadworks\\OneStepCheckout\\": ""
+        }
+    }
+}
