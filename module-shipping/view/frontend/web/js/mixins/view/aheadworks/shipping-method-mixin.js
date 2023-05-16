@@ -6,7 +6,7 @@ define([
 
     var mixin = {
             defaults: {
-                template: 'Wexo_Shipping/shipping-method'
+                template: 'Wexo_Shipping/aheadworks/shipping-method'
             }
         };
 
