@@ -20,9 +20,6 @@ var config = {
             },
             'Magento_Checkout/js/view/shipping': {
                 'Wexo_Shipping/js/mixins/view/shipping-mixin': true
-            },
-            'Aheadworks_OneStepCheckout/js/view/shipping-method': {
-                'Wexo_Shipping/js/mixins/view/shipping-method-mixin': true
             }
         }
     }

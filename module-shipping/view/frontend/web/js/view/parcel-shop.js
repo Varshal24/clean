@@ -138,16 +138,7 @@ define([
             }
         },
 
-        hasInvalidFields: function() {
-          const validationResults = this.getFields()()[0].elems().map((field) => field.validate().valid);
-          return validationResults.some((isValid) => isValid === false);
-        },
-
         search: function() {
-            if (this.hasInvalidFields()) {
-              return;
-            }
-
             this.errorMessage('');
             if (!this.parcelShopSearcher) {
                 throw 'parcelShopSearcher is null in Wexo_Shipping/js/view/parcel-shop';
